@@ -1,18 +1,17 @@
-package service;
+package com.pluralsight.service;
 
-import repository.CustomerHibernate;
-import repository.CustomerHibernateImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.pluralsight.repository.CustomerHibernate;
 
 /**
  * Created by ritesh on 2/18/17.
  */
+@Service("customerService")
 public class CustomerServiceImpl implements CustomerService {
 
+    @Autowired
     CustomerHibernate customerHibernate;
-
-    public void setCustomerHibernate(final CustomerHibernate customerHibernate) {
-        this.customerHibernate = customerHibernate;
-    }
 
     public void setCustomerFirstName() {
         customerHibernate.setCustomer("Ritesh");
